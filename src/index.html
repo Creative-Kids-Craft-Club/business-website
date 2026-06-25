@@ -7,7 +7,7 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
 <!-- Hero Section -->
 <section class="hero">
   <h1 class="hero-title">Come create, imagine, and have fun!</h1>
-  <a href="/#events" class="hero-cta">Join the Club</a>
+  <a href="{{ '/#events' | url }}" class="hero-cta">Join the Club</a>
 </section>
 
 <div class="info-bar-container">
@@ -54,7 +54,7 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
         <div>
           <div class="card-image-wrapper">
             {% if event.data.image %}
-              <img src="{{ event.data.image }}" alt="{{ event.data.title }}" class="card-image">
+              <img src="{{ event.data.image | url }}" alt="{{ event.data.title }}" class="card-image">
             {% else %}
               <div style="background: var(--primary-navy); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
                 Upcoming Fun!
@@ -62,7 +62,7 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
             {% endif %}
           </div>
           <div class="card-content">
-            <h3 class="card-title"><a href="{{ event.url }}">{{ event.data.title }}</a></h3>
+            <h3 class="card-title"><a href="{{ event.url | url }}">{{ event.data.title }}</a></h3>
             <div class="card-meta">
               <span class="event-date">📅 {{ event.data.event_date | readableDate }}</span>
               <span class="event-loc">📍 {{ event.data.location }}</span>
@@ -73,7 +73,7 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
           </div>
         </div>
         <div style="margin-top: 1rem;">
-          <a href="{{ event.url }}" style="font-family: var(--font-display); color: var(--accent-pink);">Read Details &rarr;</a>
+          <a href="{{ event.url | url }}" style="font-family: var(--font-display); color: var(--accent-pink);">Read Details &rarr;</a>
         </div>
       </article>
     {% else %}
@@ -125,7 +125,7 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
           </span>
           <div class="card-image-wrapper">
             {% if craft.data.image %}
-              <img src="{{ craft.data.image }}" alt="{{ craft.data.title }}" class="card-image">
+              <img src="{{ craft.data.image | url }}" alt="{{ craft.data.title }}" class="card-image">
             {% else %}
               <div style="background: var(--green); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
                 Craft Kit
@@ -133,14 +133,14 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
             {% endif %}
           </div>
           <div class="card-content">
-            <h3 class="card-title"><a href="{{ craft.url }}">{{ craft.data.title }}</a></h3>
+            <h3 class="card-title"><a href="{{ craft.url | url }}">{{ craft.data.title }}</a></h3>
             <div class="card-desc">
               {{ craft.templateContent | safe }}
             </div>
           </div>
         </div>
         <div style="margin-top: 1rem;">
-          <a href="{{ craft.url }}" style="font-family: var(--font-display); color: var(--green);">Read Details &rarr;</a>
+          <a href="{{ craft.url | url }}" style="font-family: var(--font-display); color: var(--green);">Read Details &rarr;</a>
         </div>
       </article>
     {% else %}

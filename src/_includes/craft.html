@@ -4,7 +4,7 @@ layout: layout.html
 <article class="detail-container">
   <div class="detail-img-wrapper">
     {% if image %}
-      <img src="{{ image }}" alt="{{ title }}">
+      <img src="{{ image | url }}" alt="{{ title }}">
     {% else %}
       <div style="background: var(--primary-navy); color: white; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem;">
         Craft Fun!
@@ -25,6 +25,6 @@ layout: layout.html
   </div>
   
   <p style="margin-top: 3rem; font-family: var(--font-display);">
-    <a href="/">&larr; Back to Home</a>
+    <a href="{{ '/' | url }}">&larr; Back to Home</a>
   </p>
 </article>

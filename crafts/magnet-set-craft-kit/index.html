@@ -13,10 +13,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Magnet Set DIY Craft Kit | Creative Kids Craft Club SSM">
   <meta property="og:description" content="Fun, creative, and hands-on craft sessions for kids in Sault Ste. Marie! Explore our upcoming events and craft kits for sale.">
-  <meta property="og:image" content="/images/upcoming-events-june.jpg">
+  <meta property="og:image" content="/business-website/images/upcoming-events-june.jpg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/business-website/css/style.css">
   
   <!-- Netlify Identity Widget (useful if deploying with Netlify Identity, optional) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -26,7 +26,7 @@
   <!-- Site Header -->
   <header>
     <div class="nav-container">
-      <a href="/" class="logo" id="site-logo">
+      <a href="/business-website/" class="logo" id="site-logo">
         <div class="logo-main">
           <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span>
           &nbsp;
@@ -37,9 +37,9 @@
       
       <nav aria-label="Main Navigation">
         <ul>
-          <li><a href="/" class="nav-home-btn">Home</a></li>
-          <li><a href="/#events">Upcoming Events</a></li>
-          <li><a href="/#crafts">Party Themes</a></li>
+          <li><a href="/business-website/" class="nav-home-btn">Home</a></li>
+          <li><a href="/business-website/#events">Upcoming Events</a></li>
+          <li><a href="/business-website/#crafts">Party Themes</a></li>
         </ul>
       </nav>
     </div>
@@ -50,7 +50,7 @@
     <article class="detail-container">
   <div class="detail-img-wrapper">
     
-      <img src="/images/products/magnet-set-craft-kit.png" alt="Magnet Set DIY Craft Kit">
+      <img src="/business-website/images/products/magnet-set-craft-kit.png" alt="Magnet Set DIY Craft Kit">
     
   </div>
   
@@ -68,7 +68,7 @@
   </div>
   
   <p style="margin-top: 3rem; font-family: var(--font-display);">
-    <a href="/">&larr; Back to Home</a>
+    <a href="/business-website/">&larr; Back to Home</a>
   </p>
 </article>
 
@@ -106,7 +106,7 @@
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
+            document.location.href = "/business-website/admin/";
           });
         }
       });
