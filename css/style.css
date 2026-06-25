@@ -60,12 +60,13 @@ a:hover {
 
 /* Header & Navigation */
 header {
-  background-color: var(--bg-white);
+  background-color: #ffffff;
   box-shadow: 0 4px 20px var(--shadow-color);
-  padding: 1.5rem 1rem;
-  position: relative;
-  z-index: 10;
-  border-bottom: 5px solid var(--yellow);
+  padding: 1.2rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--yellow);
 }
 
 .nav-container {
@@ -121,32 +122,38 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  align-items: center;
 }
 
 nav a {
   font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--primary-navy);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.5rem 0.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  background: none;
+}
+
+nav a:hover {
+  color: var(--accent-pink);
+  background: none;
+  transform: translateY(-1px);
+}
+
+nav a.nav-home-btn {
+  background-color: var(--accent-pink);
+  color: var(--text-light);
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(230, 0, 103, 0.2);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-nav a:hover, nav a.active {
-  background-color: var(--accent-pink);
+nav a.nav-home-btn:hover {
+  background-color: #d0005c;
   color: var(--text-light);
-  transform: translateY(-2px) scale(1.05);
-}
-
-nav a.admin-btn {
-  border: 2px dashed var(--teal);
-  color: var(--teal);
-}
-
-nav a.admin-btn:hover {
-  background-color: var(--teal);
-  color: var(--text-light);
-  border-color: var(--teal);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(230, 0, 103, 0.3);
 }
 
 /* Main Layout & Hero */
@@ -160,66 +167,68 @@ main {
 
 .hero {
   text-align: center;
-  padding: 3.5rem 2rem;
-  background-color: var(--bg-white);
+  padding: 8rem 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/images/hero-section-kids-crafting.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 30px;
-  margin-bottom: 3rem;
-  box-shadow: 0 10px 30px var(--shadow-color);
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 35px var(--shadow-color);
   position: relative;
   overflow: hidden;
-  border: 3px solid #eee;
-}
-
-/* Hero Header Banner styled like a Web Designer would */
-.hero-header-banner {
-  max-width: 900px;
-  margin: 0 auto 2.5rem auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px var(--shadow-color);
-  border: 6px solid var(--yellow);
-  background-color: var(--bg-cream);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.hero-header-banner:hover {
-  transform: scale(1.02) rotate(-0.5deg);
-}
-
-.hero-banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(90deg, var(--accent-pink), var(--green), var(--teal), var(--orange), var(--yellow));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--yellow);
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 850px;
+  line-height: 1.25;
+}
+
+.hero-cta {
+  background-color: var(--yellow);
+  color: var(--primary-navy);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 210, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #ffd933;
+  box-shadow: 0 12px 25px rgba(255, 210, 0, 0.5);
   color: var(--primary-navy);
 }
 
-.hero-tagline {
-  font-size: 1.4rem;
-  color: var(--accent-pink);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-display);
+.hero-cta:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
-.hero-desc {
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  font-size: 1.2rem;
+.info-bar-container {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Action Banner styling resembling the bottom info of the ad */
@@ -228,7 +237,7 @@ main {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .info-badge {
