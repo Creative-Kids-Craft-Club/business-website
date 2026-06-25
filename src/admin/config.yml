@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: your-github-username/CreativeKidsCraftClubSSM
+  branch: main
+  base_url: https://your-oauth-proxy-gateway.herokuapp.com # Placeholder URL for external OAuth proxy
+  auth_endpoint: /auth
+
+local_backend: true # Enable local development mode for Decap CMS via decap-cms-proxy
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Upcoming Events"
+    folder: "src/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "event.html" }
+      - { label: "Event Title", name: "title", widget: "string" }
+      - { label: "Date/Time", name: "event_date", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Event Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "crafts"
+    label: "Crafts"
+    folder: "src/crafts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "craft.html" }
+      - { label: "Craft Title", name: "title", widget: "string" }
+      - { label: "Status", name: "status", widget: "select", options: ["Completed Craft", "Kit for Sale"] }
+      - { label: "Display Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }

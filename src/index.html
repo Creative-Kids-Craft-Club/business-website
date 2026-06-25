@@ -1,0 +1,157 @@
+---
+layout: layout.html
+title: Welcome to Creative Kids Craft Club
+description: Discover playful hands-on craft sessions and unique DIY craft kits for kids in Sault Ste. Marie, Ontario.
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-header-banner">
+    <img src="/images/creative-kids-craft-club-logo-header.png" alt="Creative Kids Craft Club Banner" class="hero-banner-img">
+  </div>
+  
+  <h1 class="hero-title">Come create, imagine, and have fun!</h1>
+  <p class="hero-tagline">Fun, Creative &amp; Hands-On Craft Nights in Sault Ste. Marie</p>
+  <p class="hero-desc">
+    Join us for exciting craft sessions where kids can build confidence, learn new artistic skills, and bring home beautiful, handmade creations they are proud of!
+  </p>
+  
+  <div class="info-bar">
+    <div class="info-badge location">
+      <span>📍</span> NCC Meeting Room A
+    </div>
+    <div class="info-badge time">
+      <span>⏰</span> Tuesdays, 6:30 PM – 7:30 PM
+    </div>
+    <div class="info-badge pricing">
+      <span>💰</span> $30 / Session (or 4 for $100)
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us / Ad Bullet Points -->
+<section style="margin-bottom: 4rem; background: var(--bg-white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 25px var(--shadow-color); border: 2px dashed var(--yellow);">
+  <h2 style="font-family: var(--font-display); color: var(--primary-navy); margin-bottom: 1.5rem; font-size: 1.8rem; text-align: center;">What We Offer</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+    <div>
+      <ul class="custom-bullet">
+        <li><strong>Everything is included:</strong> High quality materials and tools are provided.</li>
+        <li><strong>Take home what you make:</strong> Every child leaves with a finished, proud creation!</li>
+        <li><strong>Limited spots available:</strong> Small group sizes ensure personalized guidance.</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="custom-bullet">
+        <li><strong>Perfect for any occasion:</strong> Great for girls' nights, birthday parties, or sleepovers.</li>
+        <li><strong>Choose your adventure:</strong> Variety of mediums (clay, glass paint, canvas, salt craft).</li>
+        <li><strong>Affordable fun:</strong> Walk-ins welcome for $35 (subject to space availability).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Events Section -->
+<section id="events" style="margin-bottom: 5rem;">
+  <h2 class="section-title events-title">Upcoming Events</h2>
+  <div class="grid">
+    {% for event in collections.events %}
+      <article class="card">
+        <div>
+          <div class="card-image-wrapper">
+            {% if event.data.image %}
+              <img src="{{ event.data.image }}" alt="{{ event.data.title }}" class="card-image">
+            {% else %}
+              <div style="background: var(--primary-navy); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
+                Upcoming Fun!
+              </div>
+            {% endif %}
+          </div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="{{ event.url }}">{{ event.data.title }}</a></h3>
+            <div class="card-meta">
+              <span class="event-date">📅 {{ event.data.event_date | readableDate }}</span>
+              <span class="event-loc">📍 {{ event.data.location }}</span>
+            </div>
+            <div class="card-desc">
+              {{ event.templateContent | safe }}
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="{{ event.url }}" style="font-family: var(--font-display); color: var(--accent-pink);">Read Details &rarr;</a>
+        </div>
+      </article>
+    {% else %}
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-white); border-radius: 20px;">
+        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">No sessions are scheduled right now. Check back soon for our new calendar!</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Crafts Catalog Section -->
+<section id="crafts" style="margin-bottom: 5rem;">
+  <h2 class="section-title crafts-title">Craft Party Themes</h2>
+  <p style="text-align: center; max-width: 700px; margin: -1rem auto 2.5rem auto; font-size: 1.2rem; color: var(--text-dark); line-height: 1.6;">
+    Host an unforgettable, creative celebration with us! Choose one of our beautiful, hands-on craft party themes below. Every child leaves with a proud, handmade creation!
+  </p>
+
+  <!-- Booking Info Card -->
+  <div class="booking-info-card">
+    <div class="booking-info-header">
+      <span class="booking-info-icon">🎉</span>
+      <h3>Party Booking Information</h3>
+    </div>
+    <div class="booking-info-grid">
+      <div class="booking-info-item">
+        <span class="bullet-star">⭐</span>
+        <p><strong>Group Size:</strong> A minimum of <strong>10 guests</strong> is required to book a party.</p>
+      </div>
+      <div class="booking-info-item">
+        <span class="bullet-star">⭐</span>
+        <p><strong>Host &amp; Save:</strong> Get <strong>$50 off</strong> the party total if you provide the venue or host at home!</p>
+      </div>
+      <div class="booking-info-item">
+        <span class="bullet-star">⭐</span>
+        <p><strong>Tables &amp; Chairs:</strong> Please note that Creative Kids Craft Club <strong>does not</strong> provide tables or chairs.</p>
+      </div>
+    </div>
+    <div class="booking-cta">
+      <p>Ready to book or have questions? Contact us at <a href="tel:705-257-0773">705-257-0773</a> or message us on <a href="https://facebook.com/creativekidscraftclubssm" target="_blank" rel="noopener">Facebook</a>!</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    {% for craft in collections.crafts %}
+      <article class="card">
+        <div>
+          <span class="badge {% if craft.data.status == 'Kit for Sale' %}kit{% elif craft.data.status == 'Party Theme' %}party{% else %}completed{% endif %}">
+            {{ craft.data.status }}
+          </span>
+          <div class="card-image-wrapper">
+            {% if craft.data.image %}
+              <img src="{{ craft.data.image }}" alt="{{ craft.data.title }}" class="card-image">
+            {% else %}
+              <div style="background: var(--green); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
+                Craft Kit
+              </div>
+            {% endif %}
+          </div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="{{ craft.url }}">{{ craft.data.title }}</a></h3>
+            <div class="card-desc">
+              {{ craft.templateContent | safe }}
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="{{ craft.url }}" style="font-family: var(--font-display); color: var(--green);">Read Details &rarr;</a>
+        </div>
+      </article>
+    {% else %}
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-white); border-radius: 20px;">
+        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Our craft catalog is currently empty. Check back soon!</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

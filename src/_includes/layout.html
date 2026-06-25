@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>{{ title }} | Creative Kids Craft Club SSM</title>
+  <meta name="description" content="{{ description | default('Join the Creative Kids Craft Club in Sault Ste. Marie, Ontario! We offer hands-on craft sessions, creative workshops, and complete DIY craft kits for kids.') }}">
+  <meta name="author" content="Creative Kids Craft Club">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }} | Creative Kids Craft Club SSM">
+  <meta property="og:description" content="{{ description | default('Fun, creative, and hands-on craft sessions for kids in Sault Ste. Marie! Explore our upcoming events and craft kits for sale.') }}">
+  <meta property="og:image" content="/images/upcoming-events-june.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Netlify Identity Widget (useful if deploying with Netlify Identity, optional) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo" id="site-logo">
+        <div class="logo-main">
+          <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span>
+          &nbsp;
+          <span>K</span><span>i</span><span>d</span><span>s</span>
+        </div>
+        <div class="logo-sub">Craft Club</div>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+          <li><a href="/#events" {% if page.url == "/#events" %}class="active"{% endif %}>Upcoming Events</a></li>
+          <li><a href="/#crafts" {% if page.url == "/#crafts" %}class="active"{% endif %}>Party Themes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        Creative Kids <span>Craft Club</span>
+      </div>
+      
+      <div class="footer-info">
+        <div class="info-item">
+          <strong>Location:</strong> Sault Ste. Marie, Ontario
+        </div>
+        <div class="info-item">
+          <strong>Phone:</strong> <a href="tel:705-257-0773">705-257-0773</a>
+        </div>
+        <div class="info-item">
+          <strong>Facebook:</strong> <a href="https://facebook.com/creativekidscraftclubssm" target="_blank" rel="noopener">facebook.com/creativekidscraftclubssm</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ page.date.getFullYear() if page.date else "2026" }} Creative Kids Craft Club SSM. All Rights Reserved.</p>
+        <p>Proudly serving families in Sault Ste. Marie, ON.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Netlify Identity redirect handler script -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

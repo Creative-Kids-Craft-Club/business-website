@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Candyland DIY Craft Kit | Creative Kids Craft Club SSM</title>
+  <meta name="description" content="Join the Creative Kids Craft Club in Sault Ste. Marie, Ontario! We offer hands-on craft sessions, creative workshops, and complete DIY craft kits for kids.">
+  <meta name="author" content="Creative Kids Craft Club">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Candyland DIY Craft Kit | Creative Kids Craft Club SSM">
+  <meta property="og:description" content="Fun, creative, and hands-on craft sessions for kids in Sault Ste. Marie! Explore our upcoming events and craft kits for sale.">
+  <meta property="og:image" content="/images/upcoming-events-june.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Netlify Identity Widget (useful if deploying with Netlify Identity, optional) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo" id="site-logo">
+        <div class="logo-main">
+          <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span>
+          &nbsp;
+          <span>K</span><span>i</span><span>d</span><span>s</span>
+        </div>
+        <div class="logo-sub">Craft Club</div>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/#events" >Upcoming Events</a></li>
+          <li><a href="/#crafts" >Party Themes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main id="main-content">
+    <article class="detail-container">
+  <div class="detail-img-wrapper">
+    
+      <img src="/images/products/candyland.png" alt="Candyland DIY Craft Kit">
+    
+  </div>
+  
+  <h1 class="detail-title">Candyland DIY Craft Kit</h1>
+  
+  <div class="detail-meta">
+    <div class="meta-item craft-status" aria-label="Craft Status">
+      <span>🏷️</span> Status: <strong class="badge kit" style="position: static; margin-left: 0.5rem;">Kit for Sale</strong>
+    </div>
+  </div>
+  
+  <div class="detail-body">
+    <p>Bring the sweet magic of our Candyland theme home! This complete DIY craft kit includes all the premium materials, vibrant paints, brushes, and whimsical candy-themed accents needed to create your own colorful masterpiece. Perfect for a fun afternoon of crafting. See the image for details and pricing!</p>
+
+  </div>
+  
+  <p style="margin-top: 3rem; font-family: var(--font-display);">
+    <a href="/">&larr; Back to Home</a>
+  </p>
+</article>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        Creative Kids <span>Craft Club</span>
+      </div>
+      
+      <div class="footer-info">
+        <div class="info-item">
+          <strong>Location:</strong> Sault Ste. Marie, Ontario
+        </div>
+        <div class="info-item">
+          <strong>Phone:</strong> <a href="tel:705-257-0773">705-257-0773</a>
+        </div>
+        <div class="info-item">
+          <strong>Facebook:</strong> <a href="https://facebook.com/creativekidscraftclubssm" target="_blank" rel="noopener">facebook.com/creativekidscraftclubssm</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Creative Kids Craft Club SSM. All Rights Reserved.</p>
+        <p>Proudly serving families in Sault Ste. Marie, ON.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Netlify Identity redirect handler script -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
