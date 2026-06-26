@@ -9,5 +9,62 @@
   <body>
     <!-- Include the script that builds the page and starts Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <!-- Dynamic path prefix resolver script for subpath hosting (e.g. GitHub Pages) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Detect path prefix dynamically (e.g. "/business-website" on GitHub Pages, or "" on custom domains)
+        const pathParts = window.location.pathname.split('/admin/');
+        const pathPrefix = pathParts[0] || '';
+
+        if (!pathPrefix) return; // No prefix needed if running at root / custom domain
+
+        // Helper function to rewrite image source paths
+        const fixImageElements = (doc) => {
+          const imgs = doc.getElementsByTagName('img');
+          for (let img of imgs) {
+            const src = img.getAttribute('src');
+            if (src && src.startsWith('/images/uploads/') && !src.startsWith(pathPrefix)) {
+              img.setAttribute('src', pathPrefix + src);
+            }
+          }
+        };
+
+        // Fix main document (e.g., Media Library modal)
+        fixImageElements(document);
+        const parentObserver = new MutationObserver(() => fixImageElements(document));
+        parentObserver.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['src']
+        });
+
+        // Fix preview pane iframe document
+        const checkIframeExist = setInterval(() => {
+          const iframe = document.getElementById('preview-pane');
+          if (iframe) {
+            clearInterval(checkIframeExist);
+
+            const onIframeLoad = () => {
+              const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+              if (!iframeDoc) return;
+
+              fixImageElements(iframeDoc);
+              const iframeObserver = new MutationObserver(() => fixImageElements(iframeDoc));
+              iframeObserver.observe(iframeDoc.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['src']
+              });
+            };
+
+            iframe.addEventListener('load', onIframeLoad);
+            onIframeLoad(); // Try running in case it's already loaded
+          }
+        }, 100);
+      });
+    </script>
   </body>
 </html>
