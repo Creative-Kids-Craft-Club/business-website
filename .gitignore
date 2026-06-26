@@ -7,6 +7,15 @@ products/
 # Eleventy build output
 _site/
 
+# Compiled output folders at root (must start with / to only match root level)
+/crafts/
+/events/
+/admin/
+/css/
+/images/
+/party-themes/
+/index.html
+
 # Local env files
 .env
 .env.local
