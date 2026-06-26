@@ -2,32 +2,36 @@
 layout: layout.html
 ---
 <article class="detail-container">
-  <div class="detail-img-wrapper">
-    {% if image %}
-      <img src="{{ image | url }}" alt="{{ title }}">
-    {% else %}
-      <div style="background: var(--primary-navy); color: white; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem;">
-        Craft Fun!
+  <div class="detail-grid">
+    <div class="detail-img-wrapper">
+      {% if image %}
+        <img src="{{ image | url }}" alt="{{ title }}">
+      {% else %}
+        <div style="background: var(--primary-navy); color: white; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem;">
+          Craft Fun!
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="detail-info">
+      <h1 class="detail-title">{{ title }}</h1>
+      
+      <div class="detail-meta">
+        <div class="meta-item event-date" aria-label="Event Date">
+          <span>📅</span> {{ event_date | readableDate }}
+        </div>
+        <div class="meta-item event-loc" aria-label="Event Location">
+          <span>📍</span> {{ location }}
+        </div>
       </div>
-    {% endif %}
-  </div>
-  
-  <h1 class="detail-title">{{ title }}</h1>
-  
-  <div class="detail-meta">
-    <div class="meta-item event-date" aria-label="Event Date">
-      <span>📅</span> {{ event_date | readableDate }}
-    </div>
-    <div class="meta-item event-loc" aria-label="Event Location">
-      <span>📍</span> {{ location }}
+      
+      <div class="detail-body">
+        {{ content | safe }}
+      </div>
+      
+      <p style="margin-top: 3rem; font-family: var(--font-display);">
+        <a href="{{ '/' | url }}">&larr; Back to Home</a>
+      </p>
     </div>
   </div>
-  
-  <div class="detail-body">
-    {{ content | safe }}
-  </div>
-  
-  <p style="margin-top: 3rem; font-family: var(--font-display);">
-    <a href="{{ '/' | url }}">&larr; Back to Home</a>
-  </p>
 </article>
