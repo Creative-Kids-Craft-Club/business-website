@@ -280,6 +280,7 @@ main {
 
 .events-title::after { background: var(--accent-pink); }
 .crafts-title::after { background: var(--green); }
+.kits-title::after { background: var(--teal); }
 
 .grid {
   display: grid;

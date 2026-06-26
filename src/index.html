@@ -84,7 +84,49 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
   </div>
 </section>
 
-<!-- Crafts Catalog Section -->
+<!-- DIY Craft Kits Section -->
+<section id="kits" style="margin-bottom: 5rem;">
+  <h2 class="section-title kits-title">DIY Craft Kits</h2>
+  <p style="text-align: center; max-width: 700px; margin: -1rem auto 2.5rem auto; font-size: 1.2rem; color: var(--text-dark); line-height: 1.6;">
+    Bring the creativity home! Our complete hands-on DIY craft kits are packed with high-quality materials, tools, and step-by-step instructions. See details and pricing inside!
+  </p>
+
+  <div class="grid">
+    {% for craft in collections.crafts %}
+      <article class="card">
+        <div>
+          <span class="badge kit">
+            {{ craft.data.status }}
+          </span>
+          <div class="card-image-wrapper">
+            {% if craft.data.image %}
+              <img src="{{ craft.data.image | url }}" alt="{{ craft.data.title }}" class="card-image">
+            {% else %}
+              <div style="background: var(--teal); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
+                DIY Kit
+              </div>
+            {% endif %}
+          </div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="{{ craft.url | url }}">{{ craft.data.title }}</a></h3>
+            <div class="card-desc">
+              {{ craft.templateContent | safe }}
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="{{ craft.url | url }}" style="font-family: var(--font-display); color: var(--teal);">Read Details &rarr;</a>
+        </div>
+      </article>
+    {% else %}
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-white); border-radius: 20px;">
+        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Our craft kits catalog is currently empty. Check back soon!</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Party Themes Section -->
 <section id="crafts" style="margin-bottom: 5rem;">
   <h2 class="section-title crafts-title">Craft Party Themes</h2>
   <p style="text-align: center; max-width: 700px; margin: -1rem auto 2.5rem auto; font-size: 1.2rem; color: var(--text-dark); line-height: 1.6;">
@@ -117,35 +159,35 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
   </div>
 
   <div class="grid">
-    {% for craft in collections.crafts %}
+    {% for theme in collections.party_themes %}
       <article class="card">
         <div>
-          <span class="badge {% if craft.data.status == 'Kit for Sale' %}kit{% elif craft.data.status == 'Party Theme' %}party{% else %}completed{% endif %}">
-            {{ craft.data.status }}
+          <span class="badge party">
+            {{ theme.data.status }}
           </span>
           <div class="card-image-wrapper">
-            {% if craft.data.image %}
-              <img src="{{ craft.data.image | url }}" alt="{{ craft.data.title }}" class="card-image">
+            {% if theme.data.image %}
+              <img src="{{ theme.data.image | url }}" alt="{{ theme.data.title }}" class="card-image">
             {% else %}
               <div style="background: var(--green); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
-                Craft Kit
+                Party Theme
               </div>
             {% endif %}
           </div>
           <div class="card-content">
-            <h3 class="card-title"><a href="{{ craft.url | url }}">{{ craft.data.title }}</a></h3>
+            <h3 class="card-title"><a href="{{ theme.url | url }}">{{ theme.data.title }}</a></h3>
             <div class="card-desc">
-              {{ craft.templateContent | safe }}
+              {{ theme.templateContent | safe }}
             </div>
           </div>
         </div>
         <div style="margin-top: 1rem;">
-          <a href="{{ craft.url | url }}" style="font-family: var(--font-display); color: var(--green);">Read Details &rarr;</a>
+          <a href="{{ theme.url | url }}" style="font-family: var(--font-display); color: var(--green);">Read Details &rarr;</a>
         </div>
       </article>
     {% else %}
       <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-white); border-radius: 20px;">
-        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Our craft catalog is currently empty. Check back soon!</p>
+        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Our party themes catalog is currently empty. Check back soon!</p>
       </div>
     {% endfor %}
   </div>

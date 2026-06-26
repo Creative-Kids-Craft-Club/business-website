@@ -25,13 +25,25 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "crafts"
-    label: "Crafts"
+    label: "DIY Craft Kits"
     folder: "src/crafts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "craft.html" }
-      - { label: "Craft Title", name: "title", widget: "string" }
-      - { label: "Status", name: "status", widget: "select", options: ["Completed Craft", "Kit for Sale"] }
+      - { label: "Craft Kit Title", name: "title", widget: "string" }
+      - { label: "Status", name: "status", widget: "hidden", default: "Kit for Sale" }
+      - { label: "Display Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "party_themes"
+    label: "Party Themes"
+    folder: "src/party-themes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "craft.html" }
+      - { label: "Party Theme Title", name: "title", widget: "string" }
+      - { label: "Status", name: "status", widget: "hidden", default: "Party Theme" }
       - { label: "Display Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
