@@ -52,7 +52,8 @@
 
               fixImageElements(iframeDoc);
               const iframeObserver = new MutationObserver(() => fixImageElements(iframeDoc));
-              iframeObserver.observe(iframeDoc.body, {
+              const targetNode = iframeDoc.body || iframeDoc.documentElement || iframeDoc;
+              iframeObserver.observe(targetNode, {
                 childList: true,
                 subtree: true,
                 attributes: true,
