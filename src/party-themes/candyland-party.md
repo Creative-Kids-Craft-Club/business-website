@@ -2,7 +2,7 @@
 layout: craft.html
 title: Candyland Party
 status: Party Theme
-image: /images/party-themes/candyland.png
+image: /images/uploads/candyland.png
 tags: party_themes
 date: 2026-06-26
 ---

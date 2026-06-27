@@ -2,7 +2,7 @@
 layout: craft.html
 title: Magnet Set DIY Craft Kit
 status: Kit for Sale
-image: /images/products/magnet-set-craft-kit.png
+image: /images/uploads/magnet-set-craft-kit.png
 tags: crafts
 date: 2026-06-25
 ---

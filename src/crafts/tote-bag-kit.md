@@ -2,7 +2,7 @@
 layout: craft.html
 title: Custom Tote Bag DIY Craft Kit
 status: Kit for Sale
-image: /images/products/tote-bag.png
+image: /images/uploads/tote-bag.png
 tags: crafts
 date: 2026-06-25
 ---

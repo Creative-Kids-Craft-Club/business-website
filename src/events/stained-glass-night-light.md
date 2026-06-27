@@ -3,7 +3,7 @@ layout: event.html
 title: Stained Glass Sharpie Night Light
 event_date: 2026-06-09 18:30
 location: NCC Meeting Room A
-image: /images/stained-glass-night-light.jpg
+image: /images/uploads/stained-glass-night-light.jpg
 tags: events
 date: 2026-06-09
 ---

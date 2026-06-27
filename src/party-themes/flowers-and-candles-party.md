@@ -2,7 +2,7 @@
 layout: craft.html
 title: Flowers and Candles Party
 status: Party Theme
-image: /images/party-themes/flowers-and-candles.png
+image: /images/uploads/flowers-and-candles.png
 tags: party_themes
 date: 2026-06-26
 ---

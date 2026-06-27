@@ -2,7 +2,7 @@
 layout: craft.html
 title: Flowers and Hearts Party
 status: Party Theme
-image: /images/party-themes/flowers-and-hearts.png
+image: /images/uploads/flowers-and-hearts.png
 tags: party_themes
 date: 2026-06-26
 ---

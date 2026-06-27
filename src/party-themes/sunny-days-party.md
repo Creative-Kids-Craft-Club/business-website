@@ -2,7 +2,7 @@
 layout: craft.html
 title: Sunny Days Party
 status: Party Theme
-image: /images/party-themes/sunny-days.png
+image: /images/uploads/sunny-days.png
 tags: party_themes
 date: 2026-06-26
 ---

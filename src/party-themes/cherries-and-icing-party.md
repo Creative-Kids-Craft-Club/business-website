@@ -2,7 +2,7 @@
 layout: craft.html
 title: Cherries and Icing Party
 status: Party Theme
-image: /images/party-themes/cherries-and-icing.png
+image: /images/uploads/cherries-and-icing.png
 tags: party_themes
 date: 2026-06-26
 ---

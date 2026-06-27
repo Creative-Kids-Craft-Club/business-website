@@ -2,7 +2,7 @@
 layout: craft.html
 title: Candyland DIY Craft Kit
 status: Kit for Sale
-image: /images/products/candyland.png
+image: /images/uploads/candyland.png
 tags: crafts
 date: 2026-06-25
 ---

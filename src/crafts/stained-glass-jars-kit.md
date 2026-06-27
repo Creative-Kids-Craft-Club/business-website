@@ -2,7 +2,7 @@
 layout: craft.html
 title: Stained Glass Jars DIY Craft Kit
 status: Kit for Sale
-image: /images/products/stained-glass-jars.png
+image: /images/uploads/stained-glass-jars.png
 tags: crafts
 date: 2026-06-25
 ---

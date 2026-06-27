@@ -2,7 +2,7 @@
 layout: craft.html
 title: Available DIY Craft Kits
 status: Kit for Sale
-image: /images/products/available-kits.png
+image: /images/uploads/available-kits.png
 tags: crafts
 date: 2026-06-25
 ---

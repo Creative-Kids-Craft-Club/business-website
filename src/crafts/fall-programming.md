@@ -2,7 +2,7 @@
 layout: craft.html
 title: Fall Programming & Sessions
 status: Kit for Sale
-image: /images/products/fall-programming.png
+image: /images/uploads/fall-programming.png
 tags: crafts
 date: 2026-06-25
 ---

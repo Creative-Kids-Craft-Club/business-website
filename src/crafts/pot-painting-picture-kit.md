@@ -2,7 +2,7 @@
 layout: craft.html
 title: Pot Painting Picture DIY Craft Kit
 status: Kit for Sale
-image: /images/products/pot-painting-picture.png
+image: /images/uploads/pot-painting-picture.png
 tags: crafts
 date: 2026-06-25
 ---

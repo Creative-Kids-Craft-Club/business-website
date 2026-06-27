@@ -2,7 +2,7 @@
 layout: craft.html
 title: Custom Tote Bag Party
 status: Party Theme
-image: /images/party-themes/custom-tote-bag.png
+image: /images/uploads/custom-tote-bag.png
 tags: party_themes
 date: 2026-06-26
 ---
