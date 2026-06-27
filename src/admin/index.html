@@ -30,9 +30,42 @@
           }
         };
 
-        // Fix main document (e.g., Media Library modal)
+        const observeIframe = (iframe) => {
+          const onIframeLoad = () => {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!iframeDoc) return;
+
+            fixImageElements(iframeDoc);
+            const iframeObserver = new MutationObserver(() => fixImageElements(iframeDoc));
+            const targetNode = iframeDoc.body || iframeDoc.documentElement || iframeDoc;
+            iframeObserver.observe(targetNode, {
+              childList: true,
+              subtree: true,
+              attributes: true,
+              attributeFilter: ['src']
+            });
+          };
+
+          iframe.addEventListener('load', onIframeLoad);
+          onIframeLoad(); // Try running in case it's already loaded
+        };
+
+        // Fix main document (e.g., Media Library modal) and watch for the iframe dynamically
         fixImageElements(document);
-        const parentObserver = new MutationObserver(() => fixImageElements(document));
+        
+        let iframeObserved = false;
+        const parentObserver = new MutationObserver(() => {
+          fixImageElements(document);
+          
+          if (!iframeObserved) {
+            const iframe = document.getElementById('preview-pane');
+            if (iframe) {
+              iframeObserved = true;
+              observeIframe(iframe);
+            }
+          }
+        });
+
         parentObserver.observe(document.body, {
           childList: true,
           subtree: true,
@@ -40,31 +73,12 @@
           attributeFilter: ['src']
         });
 
-        // Fix preview pane iframe document
-        const checkIframeExist = setInterval(() => {
-          const iframe = document.getElementById('preview-pane');
-          if (iframe) {
-            clearInterval(checkIframeExist);
-
-            const onIframeLoad = () => {
-              const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-              if (!iframeDoc) return;
-
-              fixImageElements(iframeDoc);
-              const iframeObserver = new MutationObserver(() => fixImageElements(iframeDoc));
-              const targetNode = iframeDoc.body || iframeDoc.documentElement || iframeDoc;
-              iframeObserver.observe(targetNode, {
-                childList: true,
-                subtree: true,
-                attributes: true,
-                attributeFilter: ['src']
-              });
-            };
-
-            iframe.addEventListener('load', onIframeLoad);
-            onIframeLoad(); // Try running in case it's already loaded
-          }
-        }, 100);
+        // Fallback check in case the iframe is already present before the observer starts
+        const initialIframe = document.getElementById('preview-pane');
+        if (initialIframe) {
+          iframeObserved = true;
+          observeIframe(initialIframe);
+        }
       });
     </script>
   </body>
