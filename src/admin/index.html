@@ -53,16 +53,18 @@
         // Fix main document (e.g., Media Library modal) and watch for the iframe dynamically
         fixImageElements(document);
         
-        let iframeObserved = false;
+        let observedIframe = null;
         const parentObserver = new MutationObserver(() => {
           fixImageElements(document);
           
-          if (!iframeObserved) {
-            const iframe = document.getElementById('preview-pane');
-            if (iframe) {
-              iframeObserved = true;
+          const iframe = document.getElementById('preview-pane');
+          if (iframe) {
+            if (iframe !== observedIframe) {
+              observedIframe = iframe;
               observeIframe(iframe);
             }
+          } else {
+            observedIframe = null;
           }
         });
 
@@ -76,7 +78,7 @@
         // Fallback check in case the iframe is already present before the observer starts
         const initialIframe = document.getElementById('preview-pane');
         if (initialIframe) {
-          iframeObserved = true;
+          observedIframe = initialIframe;
           observeIframe(initialIframe);
         }
       });
