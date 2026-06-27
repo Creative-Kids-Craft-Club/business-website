@@ -24,7 +24,7 @@
           const imgs = doc.getElementsByTagName('img');
           for (let img of imgs) {
             const src = img.getAttribute('src');
-            if (src && src.startsWith('/images/uploads/') && !src.startsWith(pathPrefix)) {
+            if (src && src.startsWith('/images/') && !src.startsWith(pathPrefix)) {
               img.setAttribute('src', pathPrefix + src);
             }
           }
