@@ -18,6 +18,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "event.html" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "events" }
       - { label: "Event Title", name: "title", widget: "string" }
       - { label: "Date/Time", name: "event_date", widget: "datetime", format: "YYYY-MM-DD HH:mm" }
       - { label: "Location", name: "location", widget: "string" }
@@ -31,6 +32,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "craft.html" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "crafts" }
       - { label: "Craft Kit Title", name: "title", widget: "string" }
       - { label: "Status", name: "status", widget: "hidden", default: "Kit for Sale" }
       - { label: "Display Image", name: "image", widget: "image" }
@@ -43,6 +45,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "craft.html" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "party_themes" }
       - { label: "Party Theme Title", name: "title", widget: "string" }
       - { label: "Status", name: "status", widget: "hidden", default: "Party Theme" }
       - { label: "Display Image", name: "image", widget: "image" }
