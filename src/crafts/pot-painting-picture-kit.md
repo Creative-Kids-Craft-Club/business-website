@@ -1,9 +1,9 @@
 ---
 layout: craft.html
-title: Pot Painting Picture DIY Craft Kit
-status: Kit for Sale
-image: /images/uploads/pot-painting-picture.png
 tags: crafts
+title: Flower Pot Finger Painting DIY Craft Kit
+status: Kit for Sale
+image: /images/uploads/flower-pot-painting.png
 date: 2026-06-25
 ---
-Paint and decorate a charming terracotta pot! This complete DIY kit includes a terracotta clay pot, a colorful set of acrylic paints, design templates, brushes, and protective sealant so you can plant flowers in it afterward. See the image for details and pricing!
+Paint and decorate 2 charming terracotta pots! This complete DIY kit includes 2 terracotta clay pots, a sharpie, a colorful set of acrylic paints, design templates, and brushes. See the image for details and pricing. Message to order!
