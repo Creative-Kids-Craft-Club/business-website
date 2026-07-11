@@ -29,7 +29,7 @@ module.exports = function(eleventyConfig) {
       output: "_site",
       includes: "_includes" // relative to input
     },
-    pathPrefix: "/business-website/",
+    pathPrefix: "",
     templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
