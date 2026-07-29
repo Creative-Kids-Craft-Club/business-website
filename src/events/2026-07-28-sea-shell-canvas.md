@@ -1,4 +1,6 @@
 ---
+layout: event.html
+tags: events
 title: Back to School Session
 event_date: 2026-08-27 18:30
 location: John Rhodes Meeting Room upstairs
