@@ -58,6 +58,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Tags", name: "tags", widget: "hidden", default: "gallery" }
+      - { label: "Title / Label (for CMS)", name: "title", widget: "string" }
       - { label: "Photo Image", name: "image", widget: "image" }
+
 
 
