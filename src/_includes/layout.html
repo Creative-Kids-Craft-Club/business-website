@@ -40,6 +40,7 @@
           <li><a href="{{ '/' | url }}" class="nav-home-btn">Home</a></li>
           <li><a href="{{ '/#events' | url }}">Upcoming Events</a></li>
           <li><a href="{{ '/#kits' | url }}">DIY Craft Kits</a></li>
+          <li><a href="{{ '/#gallery' | url }}">Photo Gallery</a></li>
           <li><a href="{{ '/#crafts' | url }}">Party Themes</a></li>
         </ul>
       </nav>
@@ -80,7 +81,17 @@
     </div>
   </footer>
 
-  <!-- Netlify Identity redirect handler script -->
+  <!-- Lightbox Modal for Gallery -->
+  <div id="gallery-modal" class="gallery-modal-backdrop" onclick="closeGalleryModal(event)" role="dialog" aria-modal="true" aria-label="Photo View">
+    <div class="gallery-modal-content" onclick="event.stopPropagation()">
+      <button type="button" class="gallery-modal-close" onclick="closeGalleryModal()" aria-label="Close photo view">&times;</button>
+      <div class="gallery-modal-img-container">
+        <img id="modal-img" src="" alt="Craft Photo Full View" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Netlify Identity & Gallery Modal Scripts -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -91,6 +102,36 @@
         }
       });
     }
+
+    function openGalleryModal(imgSrc) {
+      const modal = document.getElementById('gallery-modal');
+      const modalImg = document.getElementById('modal-img');
+      if (!modal || !modalImg) return;
+
+      modalImg.src = imgSrc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function handleGalleryClick(cardEl) {
+      if (!cardEl) return;
+      const imgSrc = cardEl.getAttribute('data-image');
+      openGalleryModal(imgSrc);
+    }
+
+    function closeGalleryModal(e) {
+      const modal = document.getElementById('gallery-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGalleryModal();
+      }
+    });
   </script>
 </body>
 </html>

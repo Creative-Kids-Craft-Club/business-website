@@ -127,6 +127,39 @@ description: Discover playful hands-on craft sessions and unique DIY craft kits 
   </div>
 </section>
 
+<!-- Photo Gallery Section -->
+<section id="gallery" style="margin-bottom: 5rem;">
+  <h2 class="section-title gallery-title">Photo Gallery</h2>
+  <p style="text-align: center; max-width: 700px; margin: -1rem auto 2.5rem auto; font-size: 1.2rem; color: var(--text-dark); line-height: 1.6;">
+    Take a peek at our young crafters in action and some of our favorite finished creations! Click any photo for a full view.
+  </p>
+
+  <div class="gallery-grid">
+    {% for photo in collections.gallery %}
+      <div class="gallery-card"
+           data-image="{{ photo.data.image | url }}"
+           onclick="handleGalleryClick(this)">
+        <div class="gallery-image-wrapper">
+          {% if photo.data.image %}
+            <img src="{{ photo.data.image | url }}" alt="Craft Gallery Photo" class="gallery-image" loading="lazy">
+          {% else %}
+            <div style="background: var(--orange); color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display);">
+              Craft Photo
+            </div>
+          {% endif %}
+          <div class="gallery-overlay">
+            <span class="gallery-zoom-icon">🔍 View</span>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: var(--bg-white); border-radius: 20px;">
+        <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Our photo gallery is currently empty. Check back soon for new craft photos!</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
 <!-- Party Themes Section -->
 <section id="crafts" style="margin-bottom: 5rem;">
   <h2 class="section-title crafts-title">Craft Party Themes</h2>

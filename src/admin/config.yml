@@ -50,3 +50,14 @@ collections:
       - { label: "Status", name: "status", widget: "hidden", default: "Party Theme" }
       - { label: "Display Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "gallery"
+    label: "Photo Gallery"
+    folder: "src/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tags", name: "tags", widget: "hidden", default: "gallery" }
+      - { label: "Photo Image", name: "image", widget: "image" }
+
+
