@@ -1,7 +1,7 @@
 ---
 layout: event.html
 tags: events
-title: Cake Jewelry Boxes and Squishes
+title: Cake Jewelry Boxes and Squishies
 event_date: 2026-09-14 18:30
 location: 105 White Oak Dr East ( Mariposa DSS)
 image: /images/uploads/sept-2026-ses.png
