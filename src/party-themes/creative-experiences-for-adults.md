@@ -1,7 +1,7 @@
 ---
 layout: craft.html
 tags: party_themes
-title: Creative Experiences for Adults
+title: Creative Experiences for Adults and Teens
 status: Party Theme
 image: /images/uploads/creative-experiences-3.png
 ---
