@@ -2,7 +2,7 @@
 layout: event.html
 tags: events
 title: "October Craft Sessions "
-event_date: 2026-10-20 18:30
+event_date: 2026-10-13 18:30
 location: 105 White Oak Drive E
 image: /images/uploads/img_9330.png
 ---
